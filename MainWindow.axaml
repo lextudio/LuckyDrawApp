@@ -2,18 +2,21 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     x:Class="LuckyDrawApp.MainWindow"
     Title="Lucky Draw App">
-    <Grid RowDefinitions="Auto,Auto,50,Auto,Auto" Margin="20" Height="600" Width="800">
-        <TextBlock Grid.Row="0" Text="Participants:" FontWeight="SemiBold" />
-        <TextBox x:Name="textBoxParticipants" Grid.Row="1" AcceptsReturn="True" TextWrapping="Wrap"
-            ScrollViewer.VerticalScrollBarVisibility="Auto" MinHeight="100" MaxHeight="300" />
+    <Grid RowDefinitions="Auto,*,50,Auto,*" ColumnDefinitions="*,*" Margin="20" Height="600" Width="800">
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Participants:" FontWeight="SemiBold" 
+            HorizontalAlignment="Center" Margin="0,0,0,10" />
+        <TextBox x:Name="textBoxParticipants" Grid.Row="1" Grid.Column="0" AcceptsReturn="True" TextWrapping="Wrap"
+            ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="0,0,10,0" />
 
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
+        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" 
+            HorizontalAlignment="Center" Spacing="10">
             <Button x:Name="ButtonLoadExcel" Margin="5" Click="ButtonLoadExcel_Click">Load Excel</Button>
             <Button x:Name="buttonDraw" Margin="5" Content="Draw Winners" Click="ButtonDraw_Click" />
         </StackPanel>
 
-        <TextBlock Grid.Row="3" Text="Winners:" FontWeight="SemiBold" />
-        <TextBox x:Name="textBoxWinners" Grid.Row="4" IsReadOnly="True" TextWrapping="Wrap"
-            ScrollViewer.VerticalScrollBarVisibility="Auto" MinHeight="100" />
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="Winners:" FontWeight="SemiBold" 
+            HorizontalAlignment="Center" Margin="0,0,0,10" />
+        <TextBox x:Name="textBoxWinners" Grid.Row="1" Grid.Column="1" IsReadOnly="True" TextWrapping="Wrap"
+            ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="10,0,0,0" />
     </Grid>
 </Window>
