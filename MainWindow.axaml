@@ -1,0 +1,19 @@
+<Window xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="LuckyDrawApp.MainWindow"
+    Title="Lucky Draw App">
+    <Grid RowDefinitions="Auto,Auto,50,Auto,Auto" Margin="20" Height="600" Width="800">
+        <TextBlock Grid.Row="0" Text="Participants:" FontWeight="SemiBold" />
+        <TextBox x:Name="textBoxParticipants" Grid.Row="1" AcceptsReturn="True" TextWrapping="Wrap"
+            ScrollViewer.VerticalScrollBarVisibility="Auto" MinHeight="100" MaxHeight="300" />
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
+            <Button x:Name="ButtonLoadExcel" Margin="5" Click="ButtonLoadExcel_Click">Load Excel</Button>
+            <Button x:Name="buttonDraw" Margin="5" Content="Draw Winners" Click="ButtonDraw_Click" />
+        </StackPanel>
+
+        <TextBlock Grid.Row="3" Text="Winners:" FontWeight="SemiBold" />
+        <TextBox x:Name="textBoxWinners" Grid.Row="4" IsReadOnly="True" TextWrapping="Wrap"
+            ScrollViewer.VerticalScrollBarVisibility="Auto" MinHeight="100" />
+    </Grid>
+</Window>
