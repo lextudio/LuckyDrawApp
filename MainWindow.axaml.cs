@@ -23,13 +23,6 @@ namespace LuckyDrawApp
 #if DEBUG
             this.AttachDevTools();
 #endif
-            textBoxParticipants = this.FindControl<TextBox>("textBoxParticipants");
-            textBoxWinners = this.FindControl<TextBox>("textBoxWinners");
-        }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
         }
 
         private async void ButtonDraw_Click(object sender, RoutedEventArgs e)
